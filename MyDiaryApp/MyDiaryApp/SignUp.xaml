@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiaryApp.SignUp"
+             Title="Sign up ">
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="20, 20, 20, 20"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     Spacing="16">
+
+            <Label Text="UserName" TextColor="BlueViolet" />
+            <Entry x:Name="usernameText2" TextColor="DarkViolet" BackgroundColor="FloralWhite"  Placeholder="Sarah " />
+            <Label Text="Password" TextColor="BlueViolet" />
+            <Entry x:Name="PasswordText1" TextColor="DarkViolet" BackgroundColor="FloralWhite" Placeholder="xxxxxx" />
+            <Label Text=" Confirm Password" TextColor="BlueViolet" />
+            <Entry x:Name="PasswordText2" TextColor="DarkViolet" BackgroundColor="FloralWhite"  Placeholder="xxxxxx" />
+            <Label Text="What iS you Favorite Food ?" TextColor="BlueViolet" />
+            <Entry x:Name="PassAnswer"  TextColor="DarkViolet" BackgroundColor="FloralWhite"  Placeholder="pizza" />
+
+
+            <Button x:Name="SignUp1" Text="Sign up" TextColor="DarkViolet" BackgroundColor="FloralWhite" Clicked="SignUp_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
+    

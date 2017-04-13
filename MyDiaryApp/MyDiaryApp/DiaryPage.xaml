@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiaryApp.Page3"
+             Title=" New Diary" >
+        
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="20, 20, 20, 20"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     Spacing="16">
+
+            <DatePicker x:Name="DatePicker"  MinimumDate="5/7/2012" MaximumDate="5/7/2025" >
+            </DatePicker>
+            <Label x:Name=" DateEntry"  TextColor="BlueViolet" Text="{Binding Date ,Source={x:Reference DatePicker   }}"/>
+                <Label Text="Subject" Font="25"  TextColor="BlueViolet"  />
+                <Entry x:Name="subjectText" BackgroundColor="FloralWhite" x:Uid="Subject1" Placeholder="Fun Day" TextColor="DarkViolet" FontAttributes="Italic" />
+                <Editor x:Name="editor1" Text="Today,I.." TextColor="DarkViolet" BackgroundColor="FloralWhite"  x:Uid="Editor1" VerticalOptions="CenterAndExpand"  IsEnabled="True"  HeightRequest="180" Completed="EditorCompleted" TextChanged="EditorTextChanged"   />
+                <Button x:Name="Save" Text="Save " TextColor="DarkViolet" BackgroundColor="FloralWhite"  Clicked="Save_Clicked"  />  <Button x:Name="Cancel" Text="cancel" TextColor="DarkViolet" BackgroundColor="FloralWhite" Clicked="Cancel_Clicked" />
+           
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

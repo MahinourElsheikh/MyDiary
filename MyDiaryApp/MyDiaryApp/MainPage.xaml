@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyDiaryApp"
+             x:Class="MyDiaryApp.MainPage"
+             Title=" My Diary"  >
+<ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="20, 20, 20, 20"
+                    WinPhone="20, 20, 20, 20" />
+</ContentPage.Padding>
+    <ContentPage.ToolbarItems>
+        
+        <ToolbarItem x:Name="ResetPassword" Text="ResetPassword" Clicked="ResetPassword_Clicked" />
+       </ContentPage.ToolbarItems>
+<ContentPage.Content> 
+    <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     Spacing="15">
+
+            <Label x:Name="usersname" Text="" FontAttributes="Italic" Font="30"  TextColor="BlueViolet"  />
+            <ListView x:Name="NoteList1" SeparatorVisibility="Default" SeparatorColor="DarkViolet"  RowHeight="50" BackgroundColor="FloralWhite"  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                               
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                            Text="Delete"  IsDestructive="True"   />
+                                <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}"
+                            Text="Edit" IsDestructive="True"    />
+                            </ViewCell.ContextActions>
+
+                            <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label Text="{Binding Subject}"
+                                TextColor="#f35e20" Font="20" />
+                                <Label Text="{Binding Date}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026"  Font="20"/>
+                                   
+                                </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+
+            <Button x:Name="GoToDiaryPage" Text=" New Diary "  Clicked="GoToAPP_Clicked" TextColor="DarkViolet" BackgroundColor="FloralWhite" />
+
+    </StackLayout>
+</ContentPage.Content>
+
+</ContentPage>
